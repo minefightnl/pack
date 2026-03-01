@@ -1,0 +1,81 @@
+name: Resourcepack Zipper
+
+on:
+  push:
+    branches:
+      - main  # Adjust this branch name if needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # A non-shallow repository clone is required
+
+    # - name: Run PackSquash
+    #   uses: ComunidadAylas/PackSquash-action@v4
+    #   with:
+    #     packsquash_version: latest # Uses the latest PackSquash release supported by the action
+    #     options: |
+    #       pack_directory = '.'
+          
+    #       shader_source_transformation_strategy = 'keep_as_is'
+        
+    - name: Retrieve the current time of Amsterdam
+      shell: bash
+      run: echo "START_TIME=$(TZ=":Europe/Amsterdam" date -R|sed 's/.....$//')" >> $GITHUB_ENV
+
+    - name: Generate version number
+      id: version
+      run: |
+        # Calculate version number from GitHub run number
+        PATCH=$(echo ${{ github.run_number }} | awk '{printf "%d", $1%10}')
+        MINOR=$(echo ${{ github.run_number }} | awk '{printf "%d", ($1/10)%10}')
+        MAJOR=1
+        echo "::set-output name=VERSION::${MAJOR}.${MINOR}.${PATCH}"
+
+
+    - name: Update pack.mcmeta
+      uses: jossef/action-set-json-field@v2.1
+      with:
+        file: pack.mcmeta
+        field: pack.description
+        value: "Minefight | v${{ steps.version.outputs.VERSION }}\n${{ env.START_TIME }}"
+
+    - name: Create ZIP file
+      run: |
+        COMMIT_ID=$(git rev-parse --short HEAD)
+        ZIP_NAME="RP.zip"
+        echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
+        zip -r "${ZIP_NAME}" .
+
+    - name: Upload ZIP artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: resource-pack-artifact
+        path: ${{ env.ZIP_NAME }}
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.RESOURCE_ZIPPER }}
+      with:
+        tag_name: release-${{ steps.version.outputs.VERSION }}
+        release_name: v${{ steps.version.outputs.VERSION }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Artifact
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.RESOURCE_ZIPPER }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ github.workspace }}/${{ env.ZIP_NAME }}
+        asset_name: ${{ env.ZIP_NAME }}
+        asset_content_type: application/zip
