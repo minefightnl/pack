@@ -280,6 +280,15 @@
          ]
       },
       {
+         "type":"bitmap",
+         "file":"minefight:font/compass.png",
+         "ascent":3,
+         "height":10,
+         "chars":[
+            "\uE10B"
+         ]
+      },
+      {
          "type":"space",
          "advances":{
             " ":4,
