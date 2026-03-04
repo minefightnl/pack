@@ -182,7 +182,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/start.png",
+         "file":"minefight:font/ui/start.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -191,7 +191,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/end.png",
+         "file":"minefight:font/ui/end.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -200,7 +200,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/1.png",
+         "file":"minefight:font/ui/1.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -209,7 +209,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/2.png",
+         "file":"minefight:font/ui/2.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -218,7 +218,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/4.png",
+         "file":"minefight:font/ui/4.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -227,7 +227,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/8.png",
+         "file":"minefight:font/ui/8.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -236,7 +236,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/16.png",
+         "file":"minefight:font/ui/16.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -245,7 +245,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/32.png",
+         "file":"minefight:font/ui/32.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -254,7 +254,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/64.png",
+         "file":"minefight:font/ui/64.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -263,7 +263,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/128.png",
+         "file":"minefight:font/ui/128.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -272,7 +272,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/256.png",
+         "file":"minefight:font/ui/256.png",
          "ascent":5,
          "height":14,
          "chars":[
@@ -281,7 +281,7 @@
       },
       {
          "type":"bitmap",
-         "file":"minefight:font/compass.png",
+         "file":"minefight:font/ui/compass.png",
          "ascent":3,
          "height":10,
          "chars":[

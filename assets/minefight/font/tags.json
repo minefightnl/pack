@@ -1,0 +1,94 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/compressed.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE300"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/stone.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE301"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/coal.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE302"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/copper.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE303"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/iron.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE304"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/lapis.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE305"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/redstone.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE306"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/gold.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE307"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/diamond.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE308"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minefight:font/tags/netherite.png",
+            "ascent": 7,
+            "height": 7,
+            "chars": [
+                "\uE309"
+            ]
+        }
+    ]
+}
